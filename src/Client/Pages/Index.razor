@@ -9,7 +9,24 @@
 </div>
 <p>Score: @_game.Total</p>
 <button @onclick="@_game.Play">Play</button>
+<button @onclick="Cheat">Cheat</button>
+
+<h3>Highscores</h3>
+<ul>
+    @foreach(var i in _game.HighScores.OrderByDescending(x => x))
+    {
+        <li>@i</li>
+    }
+</ul>
 
 @code {
     private Game _game = new Game();
+
+    void Cheat()
+    {
+        do
+        {
+            _game.Play();
+        } while (!_game.HasSnakeEyes);
+    }
 }
