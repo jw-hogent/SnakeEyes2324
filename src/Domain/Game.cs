@@ -1,6 +1,6 @@
 ﻿namespace Domain;
 
-internal class Game
+public class Game
 {
     private List<int> _highscores = new();
     private Dice _dice1 = new();
