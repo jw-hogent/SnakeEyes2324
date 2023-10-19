@@ -11,6 +11,14 @@
 <button @onclick="@_game.Play">Play</button>
 <button @onclick="Cheat">Cheat</button>
 
+@if (_game.HasSnakeEyes)
+{
+    <div class="alert alert-danger" role="alert">
+        Oeps you did it again!
+    </div>
+    <button @onclick="@_game.Restart">Restart</button>
+}
+
 <h3>Highscores</h3>
 <ul>
     @foreach(var i in _game.HighScores.OrderByDescending(x => x))
