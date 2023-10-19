@@ -8,7 +8,7 @@
      <Dice Pips="@_game.Eye2" />
 </div>
 <p>Score: @_game.Total</p>
-<button @onclick="@_game.Play">Play</button>
+<button @onclick="@_game.Play" disabled="@_game.HasSnakeEyes">Play</button>
 <button @onclick="Cheat">Cheat</button>
 
 @if (_game.HasSnakeEyes)
